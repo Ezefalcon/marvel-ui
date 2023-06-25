@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MarvelServiceService } from "../../services/marvel-service.service";
+import {CharacterData} from "../../model/character.model";
 
 @Component({
   selector: 'app-home',
@@ -8,13 +9,14 @@ import { MarvelServiceService } from "../../services/marvel-service.service";
 })
 export class HomeComponent implements OnInit {
 
-  characters: any[] = [];
+  characterData: CharacterData;
 
   constructor(private marvelService: MarvelServiceService) {}
 
   ngOnInit(): void {
     this.marvelService.getCharacters().subscribe({
-      next: value => this.characters = value,
+      next: value => this.characterData = value,
+       complete: () => console.log(this.characterData)
     })
   }
 

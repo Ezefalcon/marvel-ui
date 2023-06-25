@@ -8,6 +8,8 @@ import { MatButtonModule } from "@angular/material/button";
 import { HomeComponent } from './pages/home/home.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { AuthInterceptor } from "./AuthInterceptor";
+import { CommonModule } from "@angular/common";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 @NgModule({
   declarations: [
@@ -17,9 +19,11 @@ import { AuthInterceptor } from "./AuthInterceptor";
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     MatCardModule,
     MatButtonModule,
     HttpClientModule,
+    MatProgressBarModule
   ],
   providers: [
     {
