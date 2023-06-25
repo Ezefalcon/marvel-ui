@@ -15,7 +15,7 @@ export class CharacterCardComponent {
   }
 
   showDetails() {
-    const dialogRef = this.dialog.open(CharacterDetailComponent, {
+    this.dialog.open(CharacterDetailComponent, {
       data: this.character,
     });
   }

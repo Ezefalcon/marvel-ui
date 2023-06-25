@@ -12,7 +12,12 @@ import { CommonModule } from "@angular/common";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {InfiniteScrollModule} from "ngx-infinite-scroll";
 import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
-import {MatDialogModule} from "@angular/material/dialog";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatTabsModule } from "@angular/material/tabs";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { LogRequestTableComponent } from './components/log-request-table/log-request-table.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -20,16 +25,21 @@ import {MatDialogModule} from "@angular/material/dialog";
     CharacterCardComponent,
     HomeComponent,
     CharacterDetailComponent,
+    LogRequestTableComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     CommonModule,
     MatCardModule,
     MatButtonModule,
     HttpClientModule,
     MatProgressBarModule,
     InfiniteScrollModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule,
+    MatPaginatorModule,
+    MatTableModule
   ],
   providers: [
     {

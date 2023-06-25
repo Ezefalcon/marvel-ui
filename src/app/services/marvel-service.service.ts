@@ -13,5 +13,4 @@ export class MarvelServiceService {
   getCharacters(offset: number = 0, limit: number = 20) {
     return this.http.get(`http://localhost:8080/api/character?offset=${offset}&limit=${limit}`) as Observable<CharacterData>;
   }
-
 }
