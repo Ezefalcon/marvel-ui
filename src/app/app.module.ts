@@ -10,12 +10,16 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { AuthInterceptor } from "./AuthInterceptor";
 import { CommonModule } from "@angular/common";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {InfiniteScrollModule} from "ngx-infinite-scroll";
+import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
     AppComponent,
     CharacterCardComponent,
     HomeComponent,
+    CharacterDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,9 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
     MatCardModule,
     MatButtonModule,
     HttpClientModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    InfiniteScrollModule,
+    MatDialogModule
   ],
   providers: [
     {

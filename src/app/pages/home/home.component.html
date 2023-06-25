@@ -1,8 +1,15 @@
-<mat-progress-bar *ngIf="!characterData" mode="indeterminate" value="40"></mat-progress-bar>
-<div class="container mt-3">
-  <div class="row" *ngIf="characterData">
-    <div class="col-3 mb-3" *ngFor="let character of characterData.results">
-      <app-character-card [character]="character"/>
+<mat-progress-bar *ngIf="showLoader" mode="indeterminate" value="40"></mat-progress-bar>
+<div
+  infinite-scroll
+  (scrolled)="onScroll()"
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="1000"
+>
+  <div class="container mt-3">
+    <div class="row" *ngIf="characterData">
+      <div class="col-3 mb-3" *ngFor="let character of characterData.results">
+        <app-character-card [character]="character"/>
+      </div>
     </div>
   </div>
 </div>

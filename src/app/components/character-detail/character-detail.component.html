@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>{{character?.name}}</h1>
+<div mat-dialog-content class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+      <img mat-card-image [src]="character.thumbnail.path +'.' + character.thumbnail.extension" class="img-thumbnail">
+    </div>
+    <div class="col-6">
+      <div class="mb-2">
+        <b>Description:</b> {{character?.description === "" ? "No description available" : character?.description}}
+      </div>
+      <div class="mb-2">
+        <b>Stories available:</b> {{character?.stories?.available ?? 0}}
+      </div>
+      <div class="mb-2">
+        <b>Series available:</b> {{character?.series?.available ?? 0}}
+      </div>
+      <div class="mb-2">
+        <b>Comics available:</b> {{character?.comics?.available ?? 0}}
+      </div>
+      <div class="mb-2">
+        <b>Events available:</b> {{character?.events?.available ?? 0}}
+      </div>
+      <div class="mb-2">
+        <b>Additional info:</b>
+        <div *ngFor="let url of character.urls">
+          {{url.type}}: <a [href]="url.url">Take me there</a>
+        </div>
+      </div>
+  </div>
+
+  </div>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close] cdkFocusInitial>GO BACK</button>
+</div>
